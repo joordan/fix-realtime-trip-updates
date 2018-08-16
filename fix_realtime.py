@@ -24,8 +24,6 @@ for entity in feed.entity:
     if not entity.trip_update.stop_time_update:
 	emptytrip.append(entity.id)
 	del feed.entity[entitynum]
-	#del feed.entity[:]
-	#feed.ClearField('entity')
 	continue
 
     for stop_time_update in entity.trip_update.stop_time_update:
@@ -70,7 +68,7 @@ for entity in feed.entity:
 
     print entity
 
-fname= "tripid2.pb"
+fname= "trip_updates_.pb"
 file = open(fname,"w")
 file.write(feed.SerializeToString())
 file.close()
