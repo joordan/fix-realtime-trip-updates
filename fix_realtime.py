@@ -68,7 +68,7 @@ for entity in feed.entity:
 
     print entity
 
-fname= "trip_updates_.pb"
+fname= "trip_updates.pb"
 file = open(fname,"w")
 file.write(feed.SerializeToString())
 file.close()
